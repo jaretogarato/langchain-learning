@@ -21,14 +21,6 @@ const translationPrompt = ChatPromptTemplate.fromPromptMessages([
 	HumanMessagePromptTemplate.fromTemplate('{text}'),
 ])
 
-// const formattedPrompt = await translationPrompt.formatPromptValue({
-// 	input_language: 'English',
-// 	output_language: 'Afrikaans',
-// 	text: 'I love programming.',
-// })
-
-// console.log(formattedPrompt)
-
 const model = new ChatOpenAI({
 	temperature: 0,
 	// modelName: 'gpt-3.5-turbo',
@@ -46,7 +38,3 @@ const res = await chain.call({
 })
 
 console.log(res)
-
-// const res = await model.generatePrompt([formattedPrompt])
-
-// console.log(res.generations)
